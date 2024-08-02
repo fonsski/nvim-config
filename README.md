@@ -1,2 +1,2 @@
-# nvim-config
-My neovim configuration
+# My neovim configuration
+## Minimum viable setup to work with PHP, Laravel, JavaScript, CSS, HTML

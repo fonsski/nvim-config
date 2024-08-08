@@ -18,7 +18,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
-
+" Плагины для работы с Python
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " Плагины для поиска и дерева файлов
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 Plug 'nvim-lua/plenary.nvim'

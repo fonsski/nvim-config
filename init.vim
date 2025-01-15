@@ -1,10 +1,10 @@
+" Base settings
 set mouse=a
 set encoding=utf-8
 set number
 set cursorline
 set noswapfile
 set scrolloff=7
-
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -21,8 +21,10 @@ set shiftwidth=2
 set splitbelow
 set splitright
 
+" Make jk = esc 
 inoremap jk <esc>
 
+" Plugins start
 call plug#begin('~/.vim/plugged')
 
 " Core plugins
@@ -57,6 +59,7 @@ Plug 'prettier/vim-prettier', {
 Plug 'bmatcuk/stylelint-lsp'
 
 " Telescope
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
@@ -64,6 +67,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+" Plugins end
 
 " Leader bind to space
 let mapleader = " "

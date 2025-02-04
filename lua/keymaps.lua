@@ -7,14 +7,21 @@ vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 
 -- Telescope: поиск по содержимому
 vim.keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
-
+-- Neotree: вызов дерева файлов
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { noremap = true, silent = true })
 
--- Открытие терминала в горизонтальном сплите с высотой 15 строк
+-- Открытие терминала в вертикальном сплите с шириной 80 столбцов
 vim.keymap.set("n", "<leader>t", function()
-  vim.cmd("split term://$SHELL")
-  vim.cmd("resize 15")
+  vim.cmd("rightbelow vsplit term://$SHELL")
+  vim.cmd("vertical resize 80")
   vim.cmd("startinsert")
+end, { noremap = true, silent = true })
+
+vim.keymap.set("t", "tc", function()
+  vim.cmd("stopinsert")
+  vim.defer_fn(function()
+    vim.api.nvim_win_close(0, true)
+  end, 100)
 end, { noremap = true, silent = true })
 
 -- Для всех буферов: в режиме вставки сочетание jk работает как <Esc>

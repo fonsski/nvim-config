@@ -22,4 +22,3 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Загружаем конфигурацию плагинов
 require("plugins")
-

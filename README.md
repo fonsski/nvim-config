@@ -52,6 +52,7 @@ git clone https://github.com/fonsski/nvim-config.git ~/.config/nvim
 - Python (через pyright)
 - C/C++ (через clangd)
 - JavaScript
+### А так же языки разметки
 - HTML
 - CSS
 

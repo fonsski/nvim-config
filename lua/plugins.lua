@@ -171,4 +171,10 @@ return require("lazy").setup({
             require("auto-save").setup {}
         end,
     },
+
+    {
+  "folke/ts-comments.nvim",
+  event = "VeryLazy",
+  opts = {},
+}
 })

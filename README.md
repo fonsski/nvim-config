@@ -42,7 +42,7 @@ npm install -g intelephense
 mkdir -p ~/.config/nvim
 
 # Клонируйте репозиторий
-git clone https://github.com/fonsski/nvim-config ~/.config/nvim
+git clone https://github.com/fonsski/nvim-config.git ~/.config/nvim
 ```
 
 ## Основные возможности

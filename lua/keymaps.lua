@@ -31,7 +31,6 @@ end, { noremap = true, silent = true })
 -- Для всех буферов: в режиме вставки сочетание jk работает как <Esc>
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
 -- Отключение подсветки поиска
-vim.keymap.set("n", ",<leader>", "nohlsearch", {noremap = true, silent = true})  
 -- Для терминального режима:
 -- По умолчанию, чтобы выйти из терминального режима в нормальный, нужно нажать <C-\\><C-n>
 vim.keymap.set("t", "jk", "<C-\\><C-n>", { noremap = true, silent = true })

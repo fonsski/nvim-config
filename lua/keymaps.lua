@@ -43,8 +43,3 @@ vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { noremap = true, silent = t
 
 -- Закрытие текущего буфера
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { noremap = true, silent = true })
-
--- (Опционально) Быстрый переход к буферу по номеру (если нумерация включена)
-vim.keymap.set("n", "<leader>1", "1gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>2", "2gt", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>3", "3gt", { noremap = true, silent = true })

@@ -43,3 +43,8 @@ vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { noremap = true, silent = t
 
 -- Закрытие текущего буфера
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { noremap = true, silent = true })
+
+-- Очистка ввода поиска
+vim.keymap.set('n', ',<space>', function()
+  vim.cmd.nohlsearch()
+end, { noremap = true, silent = true, desc = "Clear search highlight" })

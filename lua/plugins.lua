@@ -33,20 +33,74 @@ return require("lazy").setup({
         end,
     },
 
-    -- LSP: базовая настройка для языковых серверов
+    -- Emmet
     {
-        "neovim/nvim-lspconfig",
+        "mattn/emmet-vim",
+        ft = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact", "php" }
+    },
+
+    -- Mason для автоматической установки LSP серверов
+    {
+        "williamboman/mason.nvim",
         config = function()
-            -- Пример настройки LSP для PHP и Python
-            local lspconfig = require("lspconfig")
-            -- Настройка PHP (например, using intelephense, если установлен)
-            lspconfig.intelephense.setup {}
-            -- Настройка Python (например, pyright)
-            lspconfig.pyright.setup {}
-            -- Поддержка C/C++
-            lspconfig.clangd.setup {}
-            -- Добавь другие серверы по необходимости
-        end,
+            require("mason").setup()
+        end
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "pyright",          -- Python
+                    "clangd",           -- C/C++
+                    "intelephense",     -- PHP
+                    "html",             -- HTML
+                    "cssls",            -- CSS
+                    "ts_ls",         -- JavaScript/TypeScript
+                },
+                automatic_installation = true,
+            })
+        end
+    },
+
+    -- Улучшенные UI подсказки для LSP
+    {
+        "nvim-lspconfig",
+        config = function()
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+            local lspconfig = require('lspconfig')
+
+            -- Python
+            lspconfig.pyright.setup({
+                capabilities = capabilities
+            })
+
+            -- PHP
+            lspconfig.intelephense.setup({
+                capabilities = capabilities
+            })
+
+            -- JavaScript/TypeScript
+            lspconfig.ts_ls.setup({
+                capabilities = capabilities
+            })
+
+            -- HTML
+            lspconfig.html.setup({
+                capabilities = capabilities
+            })
+
+            -- CSS
+            lspconfig.cssls.setup({
+                capabilities = capabilities
+            })
+
+            -- C/C++
+            lspconfig.clangd.setup({
+                capabilities = capabilities
+            })
+        end
     },
 
     -- Автодополнение: nvim-cmp и зависимости
@@ -173,8 +227,8 @@ return require("lazy").setup({
     },
 
     {
-  "folke/ts-comments.nvim",
-  event = "VeryLazy",
-  opts = {},
-}
+        "folke/ts-comments.nvim",
+        event = "VeryLazy",
+        opts = {},
+    }
 })
